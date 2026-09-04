@@ -112,6 +112,28 @@ export const UPCOMING_EVENTS = [
     registrationUrl: "https://minhasinscricoes.com.br/Evento/3ANIVERSARIODOPERNASSOLIDARIASSUZANO"
   },
   {
+    id: "corrida-da-diversidade-2026",
+    title: "Corrida da Diversidade",
+    category: "Corrida de Rua",
+    distances: ["Caminhada", "5K", "10K"],
+    date: "06 de Dezembro, 2026",
+    dateISO: "2026-12-06",
+    time: "07:00",
+    city: "São Paulo",
+    state: "SP",
+    location: "Parque Ecológico do Tietê",
+    image: "/corrida-da-diversidade.png",
+    badge: "Inclusão & Respeito • Ibradespor",
+    price: "R$ 80,00",
+    spotsLeft: 70,
+    totalSpots: 1500,
+    status: "Inscrições Abertas",
+    organizer: "MEC Assessoria & Ibradespor",
+    elevation: "+15m",
+    kit: "Camiseta Oficial Temática Arco-Íris + Sacochila + Medalha Finisher Prata + Chip Eletrônico + Troféus",
+    registrationUrl: "https://minhasinscricoes.com.br/Evento/CORRIDADADIVERSIDADEPARQUEECOLOGICODOTIETE"
+  },
+  {
     id: "mec-sunset-2026",
     title: "MEC Sunset Run 2026 - Etapa Fortaleza",
     category: "Corrida de Rua",
