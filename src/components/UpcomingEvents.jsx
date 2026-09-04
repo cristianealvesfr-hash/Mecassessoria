@@ -26,7 +26,9 @@ export default function UpcomingEvents() {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef(null);
+  const pauseTimeoutRef = useRef(null);
 
   const filters = [
     { id: 'all', label: 'Todos os Eventos' },
@@ -37,7 +39,7 @@ export default function UpcomingEvents() {
 
   const filteredEvents = UPCOMING_EVENTS.filter(event => {
     if (selectedFilter === 'all') return true;
-    if (selectedFilter === '5k-10k') return event.distances.includes('5K') || event.distances.includes('10K') || event.distances.includes('6K');
+    if (selectedFilter === '5k-10k') return event.distances.includes('5K') || event.distances.includes('10K') || event.distances.includes('6K') || event.distances.includes('7K') || event.distances.includes('8K');
     if (selectedFilter === '21k') return event.distances.includes('21K') || event.distances.includes('18K');
     if (selectedFilter === '42k') return event.distances.includes('42K');
     return true;
@@ -65,6 +67,35 @@ export default function UpcomingEvents() {
     }
   }, [filteredEvents]);
 
+  // Rolagem automática contínua e suave
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      if (scrollContainerRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+        const maxScroll = scrollWidth - clientWidth;
+
+        if (scrollLeft >= maxScroll - 20) {
+          scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollContainerRef.current.scrollBy({ left: 360, behavior: 'smooth' });
+        }
+      }
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, [isPaused, filteredEvents]);
+
+  // Ao interagir manualmente, pausa o auto-scroll temporariamente por 7s e retoma
+  const triggerManualInteractionPause = () => {
+    setIsPaused(true);
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 7000);
+  };
+
   // Ao mudar de filtro, reseta o scroll para o primeiro card
   useEffect(() => {
     if (scrollContainerRef.current) {
@@ -76,6 +107,7 @@ export default function UpcomingEvents() {
   }, [selectedFilter]);
 
   const scroll = (direction) => {
+    triggerManualInteractionPause();
     if (scrollContainerRef.current) {
       const scrollAmount = direction === 'left' ? -360 : 360;
       scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
@@ -83,6 +115,7 @@ export default function UpcomingEvents() {
   };
 
   const scrollToIndex = (index) => {
+    triggerManualInteractionPause();
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTo({ left: index * 360, behavior: 'smooth' });
       setActiveIndex(index);
@@ -231,7 +264,7 @@ export default function UpcomingEvents() {
             <button
               onClick={() => scroll('left')}
               aria-label="Voltar corrida anterior"
-              className="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-mec-blue hover:bg-mec-blue hover:text-white shadow-xl border border-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-90"
+              className="absolute -left-2 sm:-left-5 top-[24%] sm:top-[26%] -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white text-mec-blue hover:bg-mec-blue hover:text-white shadow-2xl border border-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-90"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -242,7 +275,7 @@ export default function UpcomingEvents() {
             <button
               onClick={() => scroll('right')}
               aria-label="Avançar próxima corrida"
-              className="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-mec-blue hover:bg-mec-blue hover:text-white shadow-xl border border-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-90"
+              className="absolute -right-2 sm:-right-5 top-[24%] sm:top-[26%] -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white text-mec-blue hover:bg-mec-blue hover:text-white shadow-2xl border border-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-90"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -251,6 +284,10 @@ export default function UpcomingEvents() {
           {/* Carrossel Dinâmico de Cards */}
           <div
             ref={scrollContainerRef}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => triggerManualInteractionPause()}
             className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth cursor-grab active:cursor-grabbing"
           >
             {filteredEvents.map((event) => {

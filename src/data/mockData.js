@@ -57,7 +57,7 @@ export const UPCOMING_EVENTS = [
     state: "SP",
     location: "Parque Ecológico do Tietê",
     image: "/corrida-vozes-que-nao-se-calam.png",
-    badge: "Causa Social • Denuncie 180",
+    badge: "Causa Social",
     price: "R$ 89,90",
     spotsLeft: 60,
     totalSpots: 1500,
