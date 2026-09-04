@@ -71,6 +71,11 @@ export default function Footer({ onOpenPrivacyModal, onOpenTermsModal }) {
                   Calculadora de Pace
                 </a>
               </li>
+              <li>
+                <a href="#parceiros" className="text-mec-muted hover:text-mec-blue transition-colors">
+                  Parceiros Oficiais
+                </a>
+              </li>
             </ul>
           </div>
 

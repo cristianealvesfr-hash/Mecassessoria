@@ -7,6 +7,7 @@ import EventsCarousel from './components/EventsCarousel';
 import ResultsPanel from './components/ResultsPanel';
 import PaceCalculator from './components/PaceCalculator';
 import WhyChooseUs from './components/WhyChooseUs';
+import Partners from './components/Partners';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import RegistrationModal from './components/RegistrationModal';
@@ -74,7 +75,10 @@ export default function App() {
         {/* 7. Interactive Pace Calculator & Lead Magnet */}
         <PaceCalculator />
 
-        {/* 8. Testimonials & FAQs */}
+        {/* 8. Official Partners Ecosystem */}
+        <Partners />
+
+        {/* 9. Testimonials & FAQs */}
         <Testimonials />
       </main>
 

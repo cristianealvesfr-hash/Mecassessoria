@@ -315,3 +315,50 @@ export const FAQS = [
     answer: "No nosso painel de resultados integrado, basta digitar seu número de peito ou nome completo para visualizar seu tempo bruto, tempo líquido, parciais por km, colocação geral e na categoria, além de emitir seu Certificado Digital de Conclusão."
   }
 ];
+
+export const PARTNERS_DATA = [
+  {
+    id: "fisiocare",
+    name: "Fisiocare Sports",
+    category: "Fisioterapia & Recovery",
+    description: "Recuperação muscular acelerada, bota de compressão pneumática e fisioterapia desportiva para corredores.",
+    logo: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=300&q=80",
+    instagram: "https://www.instagram.com/",
+    instagramHandle: "@fisiocaresports",
+    website: "https://www.instagram.com/",
+    discountBadge: "15% OFF para Alunos"
+  },
+  {
+    id: "nutrifit",
+    name: "NutriFit Performance",
+    category: "Nutrição Esportiva",
+    description: "Planejamento nutricional focado em treinos de corrida de rua, pré-treino, géis energéticos e hidratação.",
+    logo: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=300&q=80",
+    instagram: "https://www.instagram.com/",
+    instagramHandle: "@nutrifit.performance",
+    website: "https://www.instagram.com/",
+    discountBadge: "Condição Especial"
+  },
+  {
+    id: "speedrunners",
+    name: "Speed Runners Store",
+    category: "Artigos Esportivos & Tênis",
+    description: "Loja técnica especializada em tênis de placa de carbono, vestuário tecnológico UV50+ e acessórios de corrida.",
+    logo: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80",
+    instagram: "https://www.instagram.com/",
+    instagramHandle: "@speedrunners.store",
+    website: "https://www.instagram.com/",
+    discountBadge: "Cupom Exclusivo"
+  },
+  {
+    id: "corpoemente",
+    name: "Clínica Ortopédica Movimento",
+    category: "Medicina do Exercício",
+    description: "Avaliação biomecânica da passada, exames cardiológicos e liberação médica preventiva para maratonistas.",
+    logo: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=300&q=80",
+    instagram: "https://www.instagram.com/",
+    instagramHandle: "@clinica.movimento",
+    website: "https://www.instagram.com/",
+    discountBadge: "Parceiro Oficial"
+  }
+];

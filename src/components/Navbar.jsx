@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Trophy, Calendar, Dumbbell, ShieldCheck, Search, Calculator, PhoneCall, ChevronRight } from 'lucide-react';
+import { Menu, X, Trophy, Calendar, Dumbbell, ShieldCheck, Search, Calculator, PhoneCall, ChevronRight, Handshake } from 'lucide-react';
 
 export default function Navbar({ onOpenEventModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,6 +23,7 @@ export default function Navbar({ onOpenEventModal }) {
     { name: 'Serviços', href: '#servicos', icon: ShieldCheck },
     { name: 'Resultados', href: '#resultados', icon: Search },
     { name: 'Calculadora', href: '#calculadora', icon: Calculator },
+    { name: 'Parceiros', href: '#parceiros', icon: Handshake },
     { name: 'Contato', href: '#contato', icon: PhoneCall },
   ];
 
