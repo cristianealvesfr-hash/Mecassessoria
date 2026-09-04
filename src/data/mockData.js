@@ -24,6 +24,28 @@ export const UPCOMING_EVENTS = [
     registrationUrl: "https://minhasinscricoes.com.br/Evento/3CORRIDACONTRAPOLIO#inscricoes"
   },
   {
+    id: "corinthians-run-guararema-2026",
+    title: "Corinthians Run Etapa Guararema",
+    category: "Corrida de Rua",
+    distances: ["Caminhada", "5K", "8K"],
+    date: "26 de Setembro, 2026",
+    dateISO: "2026-09-26",
+    time: "07:30",
+    city: "Guararema",
+    state: "SP",
+    location: "Guararema - SP",
+    image: "/corinthians-run.png",
+    badge: "Circuito Oficial Timão",
+    price: "R$ 99,90",
+    spotsLeft: 52,
+    totalSpots: 1200,
+    status: "Inscrições Abertas",
+    organizer: "Sport Club Corinthians Paulista & Mec Assessoria",
+    elevation: "+35m",
+    kit: "Camiseta Oficial Corinthians Run + Sacochila Temática + Medalha Finisher + Chip de Cronometragem",
+    registrationUrl: "https://minhasinscricoes.com.br/evento/CorinthiansRun"
+  },
+  {
     id: "mec-sunset-2026",
     title: "MEC Sunset Run 2026 - Etapa Fortaleza",
     category: "Corrida de Rua",
