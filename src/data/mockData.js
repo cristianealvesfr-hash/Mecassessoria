@@ -68,6 +68,28 @@ export const UPCOMING_EVENTS = [
     registrationUrl: "https://minhasinscricoes.com.br/Evento/Vozesquenaosecalam-PqdoTiete"
   },
   {
+    id: "corrida-10-anos-marias-2026",
+    title: "Corrida 10 Anos das Marias",
+    category: "Corrida de Rua",
+    distances: ["Caminhada", "7K"],
+    date: "15 de Novembro, 2026",
+    dateISO: "2026-11-15",
+    time: "07:30",
+    city: "Ferraz de Vasconcelos",
+    state: "SP",
+    location: "Parque Nosso Recanto",
+    image: "/corrida-10-anos-marias.png",
+    badge: "Edição Especial 10 Anos",
+    price: "R$ 89,90",
+    spotsLeft: 55,
+    totalSpots: 1000,
+    status: "Inscrições Abertas",
+    organizer: "Marias Treinamento Funcional & Mec Assessoria",
+    elevation: "+30m",
+    kit: "Camiseta Oficial Dry-Fit Rosa + Sacochila + Medalha Finisher Personalizada + Chip Eletrônico + Troféus",
+    registrationUrl: "https://minhasinscricoes.com.br/Evento/CORRIDADE10ANOSDASMARIAS"
+  },
+  {
     id: "mec-sunset-2026",
     title: "MEC Sunset Run 2026 - Etapa Fortaleza",
     category: "Corrida de Rua",
