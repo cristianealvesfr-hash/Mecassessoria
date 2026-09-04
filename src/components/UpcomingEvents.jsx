@@ -22,8 +22,10 @@ import { UPCOMING_EVENTS, BIOLINK_INSCRICOES_URL } from '../data/mockData';
 
 export default function UpcomingEvents() {
   const [selectedFilter, setSelectedFilter] = useState('all');
-  const [isPaused, setIsPaused] = useState(false);
   const [selectedEventModal, setSelectedEventModal] = useState(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
 
   const filters = [
@@ -41,30 +43,49 @@ export default function UpcomingEvents() {
     return true;
   });
 
-  // Auto-scroll loop
+  // Atualiza visibilidade das setas e índice ativo
+  const updateScrollState = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 15);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 15);
+
+      const cardWidth = 360;
+      const idx = Math.round(scrollLeft / cardWidth);
+      setActiveIndex(Math.min(filteredEvents.length - 1, Math.max(0, idx)));
+    }
+  };
+
   useEffect(() => {
-    if (isPaused) return;
+    const el = scrollContainerRef.current;
+    if (el) {
+      el.addEventListener('scroll', updateScrollState, { passive: true });
+      updateScrollState();
+      return () => el.removeEventListener('scroll', updateScrollState);
+    }
+  }, [filteredEvents]);
 
-    const interval = setInterval(() => {
-      if (scrollContainerRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-        const maxScroll = scrollWidth - clientWidth;
-
-        if (scrollLeft >= maxScroll - 20) {
-          scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          scrollContainerRef.current.scrollBy({ left: 340, behavior: 'smooth' });
-        }
-      }
-    }, 4500);
-
-    return () => clearInterval(interval);
-  }, [isPaused, filteredEvents]);
+  // Ao mudar de filtro, reseta o scroll para o primeiro card
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      setActiveIndex(0);
+      setCanScrollLeft(false);
+      setCanScrollRight(filteredEvents.length > 1);
+    }
+  }, [selectedFilter]);
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
-      const scrollAmount = direction === 'left' ? -340 : 340;
+      const scrollAmount = direction === 'left' ? -360 : 360;
       scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const scrollToIndex = (index) => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: index * 360, behavior: 'smooth' });
+      setActiveIndex(index);
     }
   };
 
@@ -191,24 +212,56 @@ export default function UpcomingEvents() {
           ))}
         </div>
 
-        {/* Carrossel Dinâmico de Cards */}
-        <div
-          ref={scrollContainerRef}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setTimeout(() => setIsPaused(false), 4000)}
-          className="flex gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth"
-        >
-          {filteredEvents.map((event) => {
-            const spotsPercent = Math.min(100, Math.round(((event.totalSpots - event.spotsLeft) / event.totalSpots) * 100));
-            const isAlmostFull = event.spotsLeft <= 50;
+        {/* Helper de arraste e status para Mobile */}
+        <div className="flex sm:hidden items-center justify-between px-1 mb-3 text-[11px] font-bold text-mec-subtle">
+          <span className="flex items-center gap-1.5 text-mec-blue">
+            <ChevronLeft className="w-3.5 h-3.5 animate-pulse" />
+            <span>Deslize para o lado para ver mais</span>
+            <ChevronRight className="w-3.5 h-3.5 animate-pulse" />
+          </span>
+          <span className="text-gray-400">
+            {activeIndex + 1} de {filteredEvents.length} provas
+          </span>
+        </div>
 
-            return (
-              <div
-                key={event.id}
-                className="snap-center sm:snap-start flex-shrink-0 w-[295px] sm:w-[350px] md:w-[380px] bg-white rounded-2xl border border-gray-200 hover:border-mec-blue/40 shadow-soft-1 hover:shadow-soft-2 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
-              >
+        {/* Container do Carrossel com Setas Flutuantes */}
+        <div className="relative group/carousel">
+          {/* Seta Flutuante Esquerda */}
+          {canScrollLeft && (
+            <button
+              onClick={() => scroll('left')}
+              aria-label="Voltar corrida anterior"
+              className="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-mec-blue hover:bg-mec-blue hover:text-white shadow-xl border border-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-90"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+          )}
+
+          {/* Seta Flutuante Direita */}
+          {canScrollRight && (
+            <button
+              onClick={() => scroll('right')}
+              aria-label="Avançar próxima corrida"
+              className="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-mec-blue hover:bg-mec-blue hover:text-white shadow-xl border border-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-90"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          )}
+
+          {/* Carrossel Dinâmico de Cards */}
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth cursor-grab active:cursor-grabbing"
+          >
+            {filteredEvents.map((event) => {
+              const spotsPercent = Math.min(100, Math.round(((event.totalSpots - event.spotsLeft) / event.totalSpots) * 100));
+              const isAlmostFull = event.spotsLeft <= 50;
+
+              return (
+                <div
+                  key={event.id}
+                  className="snap-center sm:snap-start flex-shrink-0 w-[84vw] sm:w-[350px] md:w-[380px] bg-white rounded-2xl border border-gray-200 hover:border-mec-blue/40 shadow-soft-1 hover:shadow-soft-2 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                >
                 {/* Imagem do Evento & Badges */}
                 <div className="relative h-48 sm:h-54 overflow-hidden bg-gray-100">
                   <img
@@ -324,12 +377,28 @@ export default function UpcomingEvents() {
                       <ArrowUpRight className="w-4 h-4 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5 transition-transform" />
                     </a>
                   </div>
-
                 </div>
               </div>
             );
           })}
+          </div>
         </div>
+
+        {/* Indicadores de Paginação Interativos (Dots) */}
+        {filteredEvents.length > 1 && (
+          <div className="flex items-center justify-center gap-2 pt-6">
+            {filteredEvents.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => scrollToIndex(idx)}
+                aria-label={`Ir para evento ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  activeIndex === idx ? 'w-8 bg-mec-blue' : 'w-2.5 bg-gray-300 hover:bg-mec-blue/40'
+                }`}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Modal Dinâmico de Detalhes & Redirecionamento para Inscrição */}
         {selectedEventModal && (
