@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import StatsBanner from './components/StatsBanner';
 import Services from './components/Services';
 import EventsCarousel from './components/EventsCarousel';
+import PastEvents from './components/PastEvents';
 import ResultsPanel from './components/ResultsPanel';
 import PaceCalculator from './components/PaceCalculator';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -63,6 +64,9 @@ export default function App() {
         <EventsCarousel 
           onSelectEvent={handleOpenRegistration}
         />
+
+        {/* 4.1 Past Events Showcase */}
+        <PastEvents />
 
         {/* 5. Differentiators & Authority */}
         <WhyChooseUs />

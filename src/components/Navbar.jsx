@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Trophy, Calendar, Dumbbell, ShieldCheck, Search, Calculator, PhoneCall, ChevronRight, Handshake } from 'lucide-react';
+import { Menu, X, Trophy, Calendar, Dumbbell, ShieldCheck, Search, Calculator, PhoneCall, ChevronRight, Handshake, Award } from 'lucide-react';
 
 export default function Navbar({ onOpenEventModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +19,7 @@ export default function Navbar({ onOpenEventModal }) {
 
   const navLinks = [
     { name: 'Eventos', href: '#eventos', icon: Calendar },
+    { name: 'Realizados', href: '#realizados', icon: Award },
     { name: 'Assessoria', href: '#assessoria', icon: Dumbbell },
     { name: 'Serviços', href: '#servicos', icon: ShieldCheck },
     { name: 'Resultados', href: '#resultados', icon: Search },
@@ -51,12 +52,12 @@ export default function Navbar({ onOpenEventModal }) {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3.5 py-2 text-sm font-semibold text-mec-muted hover:text-mec-blue hover:bg-mec-blue-surface rounded-lg transition-all duration-200"
+                className="px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold text-mec-muted hover:text-mec-blue hover:bg-mec-blue-surface rounded-lg transition-all duration-200"
               >
                 {link.name}
               </a>

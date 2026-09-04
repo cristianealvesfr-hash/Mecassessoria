@@ -362,3 +362,98 @@ export const PARTNERS_DATA = [
     discountBadge: "Parceiro Oficial"
   }
 ];
+
+export const PAST_EVENTS = [
+  {
+    id: "mec-desafio-fortaleza-2025",
+    title: "1ª Corrida e Caminhada Solidária Mec 2025",
+    category: "Corrida de Rua",
+    date: "19 de Outubro, 2025",
+    dateISO: "2025-10-19",
+    city: "Fortaleza",
+    state: "CE",
+    location: "Parque do Cocó",
+    distances: ["3K", "5K", "10K"],
+    participants: "1.850",
+    image: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=800&q=80",
+    galleryUrl: "https://www.instagram.com/mec_assessoria/",
+    photosCount: "420 fotos",
+    fastestPace: "03:08 min/km",
+    description: "Edição comemorativa com arrecadação de alimentos, percurso ecológico no Cocó e estrutura completa de recuperação pós-prova.",
+    highlights: ["100% de Chips Lidos", "Percurso Arborizado", "Medalha Especial Metal"],
+    gallery: [
+      "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "circuito-noturno-mec-2025",
+    title: "Circuito Noturno Mec Run Beira-Mar",
+    category: "Noturna",
+    date: "23 de Agosto, 2025",
+    dateISO: "2025-08-23",
+    city: "Fortaleza",
+    state: "CE",
+    location: "Avenida Beira-Mar (Náutico)",
+    distances: ["5K", "10K"],
+    participants: "2.300",
+    image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80",
+    galleryUrl: "https://www.instagram.com/mec_assessoria/",
+    photosCount: "680 fotos",
+    fastestPace: "03:12 min/km",
+    description: "Noite inesquecível de corrida sob a brisa do mar com pórtico iluminado, música ao vivo e cronometragem em tempo real.",
+    highlights: ["Largada Noturna Iluminada", "Show com Banda ao Vivo", "Troféus por Categoria"],
+    gallery: [
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "meia-maratona-sol-poente-2025",
+    title: "Meia Maratona Sol Poente 2025",
+    category: "Meia Maratona",
+    date: "15 de Junho, 2025",
+    dateISO: "2025-06-15",
+    city: "Aquiraz",
+    state: "CE",
+    location: "Porto das Dunas",
+    distances: ["5K", "10K", "21K"],
+    participants: "3.100",
+    image: "https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?auto=format&fit=crop&w=800&q=80",
+    galleryUrl: "https://www.instagram.com/mec_assessoria/",
+    photosCount: "950 fotos",
+    fastestPace: "03:04 min/km",
+    description: "Desafio clássico do litoral com percurso técnico, pontos de hidratação a cada 2km e apoio de prontidão.",
+    highlights: ["Percurso Oficial 21K", "Pontos de Hidratação & Gel", "Transmissão ao Vivo"],
+    gallery: [
+      "https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    id: "desafio-trail-serra-2025",
+    title: "Desafio Mec Trail Run da Serra",
+    category: "Trail Run",
+    date: "12 de Abril, 2025",
+    dateISO: "2025-04-12",
+    city: "Guaramiranga",
+    state: "CE",
+    location: "Serra de Baturité",
+    distances: ["6K", "12K", "21K"],
+    participants: "1.200",
+    image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80",
+    galleryUrl: "https://www.instagram.com/mec_assessoria/",
+    photosCount: "510 fotos",
+    fastestPace: "04:15 min/km",
+    description: "Trilhas em meio à mata atlântica serrana com altimetria desafiadora, ar puro e clima ameno.",
+    highlights: ["Trilha Ecológica Protegida", "Altimetria Desafiadora", "Café Colonial Finisher"],
+    gallery: [
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80"
+    ]
+  }
+];

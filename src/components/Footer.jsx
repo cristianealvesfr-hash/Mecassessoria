@@ -62,6 +62,11 @@ export default function Footer({ onOpenPrivacyModal, onOpenTermsModal }) {
                 </a>
               </li>
               <li>
+                <a href="#realizados" className="text-mec-muted hover:text-mec-blue transition-colors">
+                  Eventos Realizados
+                </a>
+              </li>
+              <li>
                 <a href="#resultados" className="text-mec-muted hover:text-mec-blue transition-colors">
                   Consulta de Resultados
                 </a>
