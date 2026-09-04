@@ -158,19 +158,19 @@ export const SERVICES_LIST = [
     whatsappMsg: "Olá! Gostaria de saber mais sobre a Assessoria Esportiva e planos de treino para corrida de rua."
   },
   {
-    id: "arbitragem-profissional",
-    tag: "Precisão & Autoridade",
-    title: "Serviços Profissionais de Arbitragem",
-    subtitle: "Corpo de árbitros especializados e cronometragem eletrônica de alta precisão.",
-    description: "Equipe técnica de arbitragem para aplicação do regulamento, vistoria de largada/chegada, cronometragem RFID sem falhas e emissão ágil de relatórios oficiais.",
+    id: "cronometragem-eletronica",
+    tag: "Precisão & Tecnologia",
+    title: "Cronometragem Eletrônica & Resultados",
+    subtitle: "Sistemas modernos com chips RFID e apuração instantânea de resultados.",
+    description: "Tecnologia de ponta em cronometragem eletrônica RFID para corridas de rua. Montagem de pórticos de largada e chegada, leitura precisa de tempos brutos e líquidos e envio rápido de parciais e certificados digitais.",
     benefits: [
-      "Árbitros oficiais qualificados para eventos esportivos",
       "Cronometragem eletrônica RFID com chip descartável de alta frequência",
-      "Fiscalização de percurso, pontos de controle e validação de pódio",
-      "Emissão de relatórios oficiais e envio instantâneo de resultados"
+      "Pórtico oficial e tapetes de cronometragem de alta sensibilidade",
+      "Apuração em tempo real com relatórios oficiais instantâneos",
+      "Integração direta com consulta de resultados e certificado digital"
     ],
-    ctaText: "Solicitar Arbitragem",
-    whatsappMsg: "Olá! Gostaria de solicitar um orçamento para os serviços de arbitragem e cronometragem eletrônica para um evento."
+    ctaText: "Solicitar Cronometragem",
+    whatsappMsg: "Olá! Gostaria de solicitar um orçamento para os serviços de cronometragem eletrônica para um evento."
   }
 ];
 
@@ -284,7 +284,7 @@ export const TESTIMONIALS = [
     role: "Diretora de Eventos - Circuito Nordeste",
     city: "Recife, PE",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
-    comment: "Contratamos a Mec para a arbitragem e cronometragem de uma prova com 2.800 atletas. O resultado saiu impecável em minutos após o último atleta cruzar a linha. Profissionalismo ímpar!",
+    comment: "Contratamos a Mec para a infraestrutura e cronometragem de uma prova com 2.800 atletas. O resultado saiu impecável em minutos após o último atleta cruzar a linha. Profissionalismo ímpar!",
     highlight: "Organização e cronometragem nota 10"
   },
   {
@@ -303,8 +303,8 @@ export const FAQS = [
     answer: "Após uma anamnese detalhada e avaliação do seu histórico e teste de ritmo, montamos sua periodização individualizada de treinos. Você recebe planilhas semanais estruturadas para fazer onde quiser, além de participar dos nossos treinos presenciais aos fins de semana com pontos de apoio, hidratação e acompanhamento técnico de treinadores experientes."
   },
   {
-    question: "Como os organizadores contratam os serviços de Arbitragem e Cronometragem?",
-    answer: "Oferecemos pacotes modulares que incluem equipe de arbitragem especializada, montagem de pórtico com tapetes de leitura de chip RFID UHF, software de apuração em tempo real, geração de relatórios oficiais e envio direto no WhatsApp com o tempo para os atletas."
+    question: "Como os organizadores contratam os serviços de Cronometragem Eletrônica?",
+    answer: "Oferecemos pacotes modulares que incluem pórticos com tapetes de leitura de chip RFID UHF de alta frequência, software de apuração em tempo real, geração de relatórios oficiais e envio direto de resultados para os atletas."
   },
   {
     question: "Como faço para retirar meu kit de prova?",

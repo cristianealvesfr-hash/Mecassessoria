@@ -26,7 +26,7 @@ export default function Footer({ onOpenPrivacyModal, onOpenTermsModal }) {
             </a>
 
             <p className="text-sm text-mec-subtle leading-relaxed max-w-sm">
-              Especialistas em corrida de rua, periodização técnica de treinamento, organização ponta a ponta de eventos esportivos e serviços profissionais de arbitragem e cronometragem.
+              Especialistas em corrida de rua, periodização técnica de treinamento, organização ponta a ponta de eventos esportivos e cronometragem eletrônica de alta precisão.
             </p>
 
             {/* Social Icons */}
@@ -86,13 +86,13 @@ export default function Footer({ onOpenPrivacyModal, onOpenTermsModal }) {
                 </a>
               </li>
               <li>
-                <a href="#arbitragem" className="text-mec-muted hover:text-mec-blue transition-colors">
-                  Arbitragem Esportiva
+                <a href="#cronometragem" className="text-mec-muted hover:text-mec-blue transition-colors">
+                  Cronometragem Eletrônica RFID
                 </a>
               </li>
               <li>
-                <a href="#arbitragem" className="text-mec-muted hover:text-mec-blue transition-colors">
-                  Cronometragem Eletrônica RFID
+                <a href="#eventos" className="text-mec-muted hover:text-mec-blue transition-colors">
+                  Calendário de Provas
                 </a>
               </li>
               <li>

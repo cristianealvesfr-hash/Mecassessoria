@@ -1,233 +1,226 @@
-import React, { useState } from 'react';
-import { Search, Trophy, Timer, Award, Zap, FileText, CheckCircle2, ChevronRight, AlertCircle, Share2, Sparkles } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { Search, Trophy, Medal, Timer, Clock, Award, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { MOCK_RESULTS } from '../data/mockData';
 
 export default function ResultsPanel({ onOpenCertificate }) {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedResult, setSelectedResult] = useState(null);
-  const [hasSearched, setHasSearched] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedResult, setSelectedResult] = useState(MOCK_RESULTS[0]);
 
-  const handleSearch = (e) => {
-    if (e) e.preventDefault();
-    const cleanTerm = searchTerm.trim().toLowerCase();
-    if (!cleanTerm) return;
-
-    const found = MOCK_RESULTS.find(
-      r => r.bib.toLowerCase() === cleanTerm || r.name.toLowerCase().includes(cleanTerm)
+  const filteredResults = useMemo(() => {
+    if (!searchQuery.trim()) return MOCK_RESULTS;
+    const query = searchQuery.toLowerCase().trim();
+    return MOCK_RESULTS.filter(
+      r => r.name.toLowerCase().includes(query) || r.bib.toLowerCase().includes(query) || r.event.toLowerCase().includes(query)
     );
+  }, [searchQuery]);
 
-    setSelectedResult(found || null);
-    setHasSearched(true);
-  };
-
-  const handleQuickSelect = (bib) => {
-    setSearchTerm(bib);
-    const found = MOCK_RESULTS.find(r => r.bib === bib);
-    setSelectedResult(found || null);
-    setHasSearched(true);
-  };
+  const currentResult = selectedResult || filteredResults[0] || null;
 
   return (
-    <section id="resultados" className="py-10 md:py-24 bg-white relative">
+    <section id="resultados" className="py-10 md:py-24 bg-white relative border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mec-blue-surface text-mec-blue text-xs font-bold uppercase tracking-wider mb-3 border border-mec-blue/20">
-            <Search className="w-3.5 h-3.5 text-mec-blue" />
-            <span>Pós-Prova & Cronometragem Oficial</span>
+            <Trophy className="w-3.5 h-3.5" />
+            <span>Cronometragem Eletrônica RFID</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-mec-text tracking-tight mb-3">
-            Painel Oficial de Resultados
+            Consulta de Resultados Oficiais
           </h2>
-          <p className="text-sm sm:text-base text-mec-muted">
-            Consulte seu tempo bruto, tempo líquido oficial por chip, parciais por quilômetro e emita seu Certificado Digital Finisher.
+          <p className="text-base text-mec-muted">
+            Consulte seu tempo bruto, tempo líquido, parciais por km e emita o seu Certificado Digital Finisher.
           </p>
         </div>
 
         {/* Search Input Bar */}
-        <div className="max-w-2xl mx-auto mb-8">
-          <form onSubmit={handleSearch} className="relative flex flex-col sm:flex-row gap-2 bg-white p-2 rounded-2xl border-2 border-gray-200 focus-within:border-mec-blue shadow-soft-1 transition-colors">
-            <div className="relative flex-1 flex items-center pl-3">
-              <Search className="w-5 h-5 text-gray-400 mr-2 flex-shrink-0" />
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Digite seu Número de Peito (ex: 1042) ou Nome..."
-                className="w-full text-sm font-semibold text-mec-text placeholder-gray-400 bg-transparent border-none outline-none py-2"
-              />
-            </div>
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-xl bg-mec-blue hover:bg-mec-blue-light text-white text-sm font-bold shadow-sm hover:shadow-blue-glow transition-all flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <span>Consultar</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </form>
-
-          {/* Quick Demo Test Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs">
-            <span className="text-mec-subtle font-semibold">Exemplos de peito para testar:</span>
-            <button
-              type="button"
-              onClick={() => handleQuickSelect('1042')}
-              className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-mec-blue-surface hover:text-mec-blue text-mec-muted font-bold transition-colors cursor-pointer"
-            >
-              #1042
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickSelect('2085')}
-              className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-mec-blue-surface hover:text-mec-blue text-mec-muted font-bold transition-colors cursor-pointer"
-            >
-              #2085
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickSelect('3104')}
-              className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-mec-blue-surface hover:text-mec-blue text-mec-muted font-bold transition-colors cursor-pointer"
-            >
-              #3104
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickSelect('4501')}
-              className="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-mec-blue-surface hover:text-mec-blue text-mec-muted font-bold transition-colors cursor-pointer"
-            >
-              #4501
-            </button>
+        <div className="max-w-2xl mx-auto mb-10">
+          <div className="relative flex items-center shadow-soft-1 rounded-2xl border border-gray-200 bg-gray-50 focus-within:bg-white focus-within:border-mec-blue focus-within:ring-2 focus-within:ring-mec-blue/20 transition-all">
+            <Search className="w-5 h-5 text-mec-muted ml-4 flex-shrink-0" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Busque por Nome do Atleta ou Nº de Peito (ex: 1042, Gabriel, Mariana)..."
+              className="w-full py-3.5 px-3 bg-transparent text-sm text-mec-text placeholder-mec-muted outline-none"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="mr-3 text-xs font-bold text-mec-muted hover:text-mec-blue px-2 py-1"
+              >
+                Limpar
+              </button>
+            )}
           </div>
         </div>
 
-        {/* Results Display Area */}
-        {selectedResult ? (
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-gray-100 shadow-soft-2 overflow-hidden animate-fade-in">
-            {/* Result Header Top Bar */}
-            <div className="bg-gradient-to-r from-mec-blue to-[#0077cc] text-white p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-xs font-extrabold uppercase tracking-wider">
-                    {selectedResult.distance}
-                  </span>
-                  <span className="text-xs font-semibold text-white/80">
-                    Número de Peito: <strong className="text-white">#{selectedResult.bib}</strong>
-                  </span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                  {selectedResult.name}
-                </h3>
-                <p className="text-xs sm:text-sm text-white/90 mt-1">
-                  {selectedResult.event}
-                </p>
-              </div>
-
-              <div className="flex items-center gap-2 w-full sm:w-auto">
-                <button
-                  onClick={() => onOpenCertificate(selectedResult)}
-                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white text-mec-blue hover:bg-gray-50 text-xs sm:text-sm font-extrabold shadow-sm flex items-center justify-center gap-2 transition-transform hover:scale-105 cursor-pointer"
-                >
-                  <FileText className="w-4 h-4 text-mec-blue" />
-                  <span>Certificado Digital</span>
-                </button>
-              </div>
+        {/* Results Layout Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* List of Athletes (4 cols) */}
+          <div className="lg:col-span-4 space-y-3">
+            <div className="text-xs font-extrabold uppercase tracking-wider text-mec-subtle px-1">
+              Atletas Encontrados ({filteredResults.length})
             </div>
 
-            {/* Metrics Grid */}
-            <div className="p-6 sm:p-8">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center">
-                  <div className="text-[11px] font-bold text-mec-subtle uppercase mb-1">Tempo Líquido (Chip)</div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-mec-blue font-mono">{selectedResult.netTime}</div>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center">
-                  <div className="text-[11px] font-bold text-mec-subtle uppercase mb-1">Pace Médio</div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-mec-text font-mono">{selectedResult.pace}</div>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center">
-                  <div className="text-[11px] font-bold text-mec-subtle uppercase mb-1">Classificação Geral</div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-mec-text">{selectedResult.overallRank}º Lugar</div>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-center">
-                  <div className="text-[11px] font-bold text-mec-subtle uppercase mb-1">Cat. ({selectedResult.category})</div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-emerald-600">{selectedResult.categoryRank}º Lugar</div>
-                </div>
+            {filteredResults.length === 0 ? (
+              <div className="p-8 text-center bg-gray-50 rounded-2xl border border-gray-200 text-mec-muted text-sm">
+                Nenhum resultado localizado para "{searchQuery}". Tente outro número de peito ou nome.
               </div>
-
-              {/* Splits / Control points */}
-              <div className="space-y-3">
-                <h4 className="text-xs font-extrabold text-mec-subtle uppercase tracking-wider flex items-center gap-2">
-                  <Timer className="w-4 h-4 text-mec-blue" />
-                  <span>Parciais por Ponto de Controle (Split Times)</span>
-                </h4>
-
-                <div className="overflow-x-auto">
-                  <table className="w-full text-xs text-left">
-                    <thead className="bg-gray-50 text-mec-subtle font-bold border-b border-gray-200">
-                      <tr>
-                        <th className="py-2.5 px-3">Ponto / KM</th>
-                        <th className="py-2.5 px-3">Tempo Acumulado</th>
-                        <th className="py-2.5 px-3">Pace Parcial</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100 font-medium">
-                      {selectedResult.splits.map((split, sIdx) => (
-                        <tr key={sIdx} className="hover:bg-gray-50">
-                          <td className="py-2 px-3 font-semibold text-mec-text flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-mec-blue"></span>
-                            {split.point}
-                          </td>
-                          <td className="py-2 px-3 font-mono text-mec-muted">{split.time}</td>
-                          <td className="py-2 px-3 font-mono text-mec-blue font-bold">{split.pace}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+            ) : (
+              <div className="space-y-2.5 max-h-[520px] overflow-y-auto pr-1">
+                {filteredResults.map((item) => {
+                  const isSelected = currentResult?.bib === item.bib;
+                  return (
+                    <button
+                      key={item.bib}
+                      onClick={() => setSelectedResult(item)}
+                      className={`w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between cursor-pointer ${
+                        isSelected
+                          ? 'bg-mec-blue-surface border-mec-blue shadow-sm'
+                          : 'bg-white hover:bg-gray-50 border-gray-200 hover:border-mec-blue/30'
+                      }`}
+                    >
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono text-xs font-extrabold px-2 py-0.5 rounded bg-mec-blue text-white">
+                            #{item.bib}
+                          </span>
+                          <span className="text-sm font-extrabold text-mec-text">
+                            {item.name}
+                          </span>
+                        </div>
+                        <div className="text-xs text-mec-muted line-clamp-1">
+                          {item.event}
+                        </div>
+                        <div className="text-xs font-semibold text-mec-blue flex items-center gap-2 pt-0.5">
+                          <span>{item.distance}</span>
+                          <span>•</span>
+                          <span>{item.netTime}</span>
+                          <span>•</span>
+                          <span>{item.pace}</span>
+                        </div>
+                      </div>
+                      <ChevronRight className={`w-4 h-4 flex-shrink-0 ${isSelected ? 'text-mec-blue' : 'text-gray-300'}`} />
+                    </button>
+                  );
+                })}
               </div>
+            )}
+          </div>
 
-              {/* Footer info inside result */}
-              <div className="mt-6 pt-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-mec-subtle">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                  <span>Homologado por Mec Assessoria • Cronometragem Eletrônica RFID</span>
+          {/* Selected Athlete Details Card (8 cols) */}
+          <div className="lg:col-span-8">
+            {currentResult ? (
+              <div className="bg-[#FAFAFC] rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-soft-1 space-y-6">
+                
+                {/* Header info */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-gray-200">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-sm font-extrabold px-2.5 py-1 rounded-lg bg-mec-blue text-white">
+                        Peito #{currentResult.bib}
+                      </span>
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-700 flex items-center gap-1">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        {currentResult.status}
+                      </span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-mec-text pt-1">
+                      {currentResult.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-mec-muted font-medium">
+                      {currentResult.event} • Distância: <strong>{currentResult.distance}</strong>
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => onOpenCertificate(currentResult)}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-mec-blue hover:bg-mec-blue-light text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-blue-glow transition-all active:scale-95 cursor-pointer whitespace-nowrap"
+                  >
+                    <Award className="w-4 h-4" />
+                    <span>Emitir Certificado Digital</span>
+                  </button>
                 </div>
-                <div className="font-mono">
-                  Código de Autenticidade: {selectedResult.certificateId}
+
+                {/* Metrics 4-Boxes */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                  <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                    <div className="text-[11px] font-bold text-mec-subtle uppercase flex items-center gap-1 mb-1">
+                      <Timer className="w-3.5 h-3.5 text-mec-blue" />
+                      Tempo Líquido
+                    </div>
+                    <div className="text-lg sm:text-xl font-extrabold text-mec-text font-mono">
+                      {currentResult.netTime}
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                    <div className="text-[11px] font-bold text-mec-subtle uppercase flex items-center gap-1 mb-1">
+                      <Clock className="w-3.5 h-3.5 text-mec-blue" />
+                      Tempo Bruto
+                    </div>
+                    <div className="text-lg sm:text-xl font-extrabold text-mec-muted font-mono">
+                      {currentResult.grossTime}
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                    <div className="text-[11px] font-bold text-mec-subtle uppercase flex items-center gap-1 mb-1">
+                      <Medal className="w-3.5 h-3.5 text-mec-blue" />
+                      Ritmo (Pace)
+                    </div>
+                    <div className="text-lg sm:text-xl font-extrabold text-mec-blue font-mono">
+                      {currentResult.pace}
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                    <div className="text-[11px] font-bold text-mec-subtle uppercase flex items-center gap-1 mb-1">
+                      <Trophy className="w-3.5 h-3.5 text-mec-blue" />
+                      Classificação
+                    </div>
+                    <div className="text-lg sm:text-xl font-extrabold text-emerald-600">
+                      {currentResult.overallRank}º Geral
+                    </div>
+                    <div className="text-[10px] text-mec-subtle">
+                      {currentResult.categoryRank}º na Cat. ({currentResult.category})
+                    </div>
+                  </div>
                 </div>
+
+                {/* Splits / Parciais Table */}
+                {currentResult.splits && currentResult.splits.length > 0 && (
+                  <div className="space-y-3 pt-2">
+                    <div className="text-xs font-extrabold uppercase tracking-wider text-mec-subtle">
+                      Parciais Oficiais do Percurso (Splits)
+                    </div>
+                    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                      <div className="grid grid-cols-3 bg-gray-50 px-4 py-2.5 text-xs font-extrabold text-mec-text uppercase tracking-wider border-b border-gray-200">
+                        <div>Ponto / KM</div>
+                        <div className="text-center">Tempo Acumulado</div>
+                        <div className="text-right">Ritmo Parcial</div>
+                      </div>
+                      <div className="divide-y divide-gray-100">
+                        {currentResult.splits.map((split, idx) => (
+                          <div key={idx} className="grid grid-cols-3 px-4 py-3 text-xs font-semibold text-mec-muted">
+                            <div className="text-mec-text font-bold">{split.km}</div>
+                            <div className="text-center font-mono">{split.time}</div>
+                            <div className="text-right font-mono text-mec-blue font-bold">{split.pace} min/km</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
               </div>
+            ) : null}
+          </div>
 
-            </div>
-          </div>
-        ) : hasSearched ? (
-          <div className="max-w-md mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-8 text-center animate-fade-in">
-            <AlertCircle className="w-10 h-10 text-amber-500 mx-auto mb-3" />
-            <h4 className="text-base font-bold text-mec-text mb-1">Nenhum resultado encontrado</h4>
-            <p className="text-xs text-mec-muted mb-4">
-              Verifique se o número de peito está correto ou utilize os botões de exemplo acima.
-            </p>
-            <button
-              onClick={() => handleQuickSelect('1042')}
-              className="px-4 py-2 rounded-xl bg-mec-blue text-white text-xs font-bold shadow-sm cursor-pointer"
-            >
-              Testar com Número #1042
-            </button>
-          </div>
-        ) : (
-          /* Empty Initial State - Clean Prompt */
-          <div className="max-w-md mx-auto bg-[#F8F9FA] border border-gray-200 rounded-2xl p-8 text-center space-y-2">
-            <div className="w-12 h-12 rounded-2xl bg-mec-blue-surface text-mec-blue flex items-center justify-center mx-auto mb-3">
-              <Trophy className="w-6 h-6" />
-            </div>
-            <h4 className="text-base font-extrabold text-mec-text">
-              Consulte seu Resultado Oficial
-            </h4>
-            <p className="text-xs text-mec-muted leading-relaxed">
-              Digite seu número de peito ou clique em um dos exemplos rápidos acima para visualizar seus tempos e emitir seu Certificado Digital Finisher.
-            </p>
-          </div>
-        )}
+        </div>
 
       </div>
     </section>

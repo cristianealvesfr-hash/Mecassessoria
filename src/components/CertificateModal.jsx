@@ -106,7 +106,7 @@ export default function CertificateModal({ result, onClose }) {
               <div className="font-serif italic font-bold text-sm text-mec-text border-b border-gray-400 pb-1">
                 Diretoria Técnica Mec Assessoria
               </div>
-              <div className="text-[10px] text-mec-subtle mt-0.5">Arbitragem & Cronometragem Oficial</div>
+              <div className="text-[10px] text-mec-subtle mt-0.5">Organização & Cronometragem Oficial</div>
             </div>
           </div>
 

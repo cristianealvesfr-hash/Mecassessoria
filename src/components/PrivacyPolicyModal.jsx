@@ -64,15 +64,15 @@ export default function PrivacyPolicyModal({ onClose }) {
               Apresentação e Compromisso com a Privacidade
             </h4>
             <p>
-              A <strong>Mec Assessoria Esportiva</strong> preza pela transparência, segurança e privacidade de todos os seus usuários, atletas, árbitros e clientes corporativos.
+              A <strong>Mec Assessoria Esportiva</strong> preza pela transparência, segurança e privacidade de todos os seus usuários, atletas, alunos e clientes corporativos.
             </p>
             <p>
-              Esta Política de Privacidade foi elaborada em conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 – LGPD)</strong> e o Marco Civil da Internet (Lei nº 12.965/2014), cobrindo as três frentes de atuação da empresa:
+              Esta Política de Privacidade foi elaborada em conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 – LGPD)</strong> e o Marco Civil da Internet (Lei nº 12.965/2014), cobrindo as atividades da empresa:
             </p>
             <ul className="list-disc list-inside space-y-1 pl-2 text-mec-text font-semibold text-xs sm:text-sm">
               <li>Organização de Eventos Esportivos e Corridas de Rua;</li>
               <li>Assessoria Esportiva Integrada (treinamento e acompanhamento de corredores);</li>
-              <li>Serviços Profissionais de Arbitragem e Cronometragem Esportiva.</li>
+              <li>Cronometragem Eletrônica RFID e Emissão Oficial de Resultados.</li>
             </ul>
           </section>
 
@@ -83,13 +83,13 @@ export default function PrivacyPolicyModal({ onClose }) {
               Quais Dados Coletamos
             </h4>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-2">
                 <h5 className="text-xs font-extrabold text-mec-text uppercase tracking-wider text-mec-blue">
                   A. Atletas em Provas
                 </h5>
                 <p className="text-xs text-mec-muted leading-relaxed">
-                  Nome completo, CPF, RG, data de nascimento, gênero, tamanho da camiseta oficial (kit), e-mail, telefone/WhatsApp, dados de pagamento e tempos de prova apurados por chip.
+                  Nome completo, CPF, RG, data de nascimento, gênero, tamanho da camiseta oficial (kit), e-mail, telefone/WhatsApp, dados de pagamento e tempos de prova apurados por chip RFID.
                 </p>
               </div>
 
@@ -99,15 +99,6 @@ export default function PrivacyPolicyModal({ onClose }) {
                 </h5>
                 <p className="text-xs text-mec-muted leading-relaxed">
                   Nome, CPF, contato, histórico esportivo e <strong>dados de saúde (sensíveis)</strong>: anamnese, atestados de aptidão médica cardiovascular e questionários de prontidão física.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-2">
-                <h5 className="text-xs font-extrabold text-mec-text uppercase tracking-wider text-mec-blue">
-                  C. Corpo de Árbitros
-                </h5>
-                <p className="text-xs text-mec-muted leading-relaxed">
-                  Nome, CPF, RG, dados bancários/chave PIX para repasse de diárias, histórico profissional e registros de escalação técnica.
                 </p>
               </div>
             </div>
@@ -122,7 +113,7 @@ export default function PrivacyPolicyModal({ onClose }) {
             <div className="space-y-2 text-xs sm:text-sm">
               <p>• <strong>Gestão de Inscrições:</strong> Confirmação de inscrição, atribuição de número de peito, separação de kit e divulgação de tempos e classificação oficial.</p>
               <p>• <strong>Prescrição de Treinos:</strong> Elaboração de planilhas semanais personalizadas, adequação de ritmo e acompanhamento seguro de volume de corrida.</p>
-              <p>• <strong>Operação de Arbitragem:</strong> Escalação e pagamento de honorários/diárias de árbitros e cronometristas.</p>
+              <p>• <strong>Operação de Cronometragem:</strong> Processamento de chips RFID, apuração de classificações e emissão de certificados digitais.</p>
               <p>• <strong>Comunicação e Suporte:</strong> Envio de informações sobre provas, retirada de kits e resultados via WhatsApp e e-mail.</p>
               <p>• <strong>Divulgação de Eventos:</strong> Envio de convites para novas corridas de rua (com opção de cancelamento a qualquer momento).</p>
             </div>

@@ -21,10 +21,10 @@ export default function FloatingWhatsApp() {
       message: "Olá! Gostaria de saber como funciona a Assessoria Esportiva e os planos de treino de corrida.",
       badge: "Planilhas de Treino"
     },
-    arbitragem: {
-      tooltip: "Orçamento de Arbitragem & Cronometragem",
-      message: "Olá! Gostaria de solicitar um orçamento para serviços de arbitragem e cronometragem eletrônica.",
-      badge: "Arbitragem Especializada"
+    cronometragem: {
+      tooltip: "Orçamento de Cronometragem Eletrônica",
+      message: "Olá! Gostaria de solicitar um orçamento para serviços de cronometragem eletrônica e chipagem.",
+      badge: "Cronometragem RFID"
     },
     resultados: {
       tooltip: "Suporte sobre tempos e certificados",
@@ -44,7 +44,7 @@ export default function FloatingWhatsApp() {
   };
 
   useEffect(() => {
-    const sectionIds = ['hero', 'eventos', 'servicos', 'assessoria', 'arbitragem', 'resultados', 'calculadora', 'contato'];
+    const sectionIds = ['hero', 'eventos', 'servicos', 'assessoria', 'cronometragem', 'resultados', 'calculadora', 'contato'];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 300;

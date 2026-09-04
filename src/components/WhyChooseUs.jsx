@@ -10,8 +10,8 @@ export default function WhyChooseUs() {
     },
     {
       icon: ShieldCheck,
-      title: "Arbitragem Esportiva Especializada",
-      desc: "Equipe experiente de arbitragem esportiva, garantindo a aplicação rigorosa das regras, segurança técnica e lisura de cada etapa."
+      title: "Planejamento Técnico & Seguro",
+      desc: "Equipe especializada em segurança viária, licenças municipais, gestão de arena e atendimento de excelência aos atletas."
     },
     {
       icon: Award,
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
                 <span className="text-sm font-semibold text-mec-text">
-                  Estrutura de arena, percursos seguros, cronometragem eletrônica RFID e arbitragem oficial
+                  Estrutura de arena, percursos seguros, pórticos oficiais e cronometragem eletrônica RFID
                 </span>
               </div>
             </div>

@@ -64,10 +64,10 @@ export default function TermsOfUseModal({ onClose }) {
               Objeto e Aceitação dos Termos
             </h4>
             <p>
-              O presente instrumento regula os <strong>Termos de Uso e Condições Gerais</strong> aplicáveis à relação jurídica entre a <strong>Mec Assessoria Esportiva & Eventos</strong> ("Empresa", "Organização") e todos os seus Usuários (Atletas, Alunos da Assessoria, Árbitros e Contratantes).
+              O presente instrumento regula os <strong>Termos de Uso e Condições Gerais</strong> aplicáveis à relação jurídica entre a <strong>Mec Assessoria Esportiva & Eventos</strong> ("Empresa", "Organização") e todos os seus Usuários (Atletas, Alunos da Assessoria e Contratantes).
             </p>
             <p className="text-xs text-mec-muted">
-              A inscrição em eventos, contratação de planos ou prestação de serviços implica a aceitação automática de todas as cláusulas deste instrumento.
+              A inscrição em eventos ou a contratação de planos e serviços implica a aceitação automática de todas as cláusulas deste instrumento.
             </p>
           </section>
 
@@ -123,14 +123,14 @@ export default function TermsOfUseModal({ onClose }) {
             </div>
           </section>
 
-          {/* 5. Regras para Árbitros */}
+          {/* 5. Cronometragem e Classificação */}
           <section className="space-y-3 bg-gray-50 p-5 rounded-2xl border border-gray-200">
             <h4 className="text-base font-extrabold text-mec-text flex items-center gap-2">
               <Scale className="w-5 h-5 text-mec-blue" />
-              5. Regras para Árbitros e Prestadores (Sem Vínculo CLT)
+              5. Cronometragem Eletrônica e Resultados Oficiais
             </h4>
             <p className="text-xs sm:text-sm">
-              O cadastro e convocação de árbitros e cronometristas constitui <strong>prestação de serviço autônomo e eventual (Código Civil Brasileiro)</strong>, não gerando qualquer vínculo empregatício, trabalhista (CLT) ou previdenciário entre o prestador e a Mec Assessoria.
+              Os tempos de prova são apurados por sistema eletrônico RFID de chip descartável. A validação dos resultados oficiais, classificação geral e por categoria compete à Diretoria Técnica da Organização, assegurando a precisão dos tempos brutos e líquidos.
             </p>
           </section>
 

@@ -33,7 +33,7 @@ export default function Hero({ onOpenEventModal }) {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Pill Tag */}
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-mec-blue-surface border border-mec-blue/30 text-mec-blue text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-sm">
-              <span>Assessoria • Eventos • Arbitragem Oficial</span>
+              <span>Assessoria Esportiva • Eventos Oficiais</span>
             </div>
 
             {/* Main Headline */}
@@ -74,7 +74,7 @@ export default function Hero({ onOpenEventModal }) {
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-mec-blue flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-mec-text">Arbitragem Especializada</span>
+                <span className="text-xs sm:text-sm font-semibold text-mec-text">Infraestrutura Completa</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-mec-blue flex-shrink-0" />

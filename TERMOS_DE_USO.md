@@ -7,14 +7,14 @@
 
 ## 1. Objeto e Aceitação dos Termos
 
-O presente instrumento regula os **Termos de Uso e Condições Gerais** aplicáveis à relação jurídica entre a empresa **Mec Assessoria Esportiva & Eventos** ("Empresa", "Mec Assessoria", "Organização") e todos os seus **Usuários** (Atletas, Alunos da Assessoria Esportiva, Árbitros, Cronometristas e Clientes Corporativos).
+O presente instrumento regula os **Termos de Uso e Condições Gerais** aplicáveis à relação jurídica entre a empresa **Mec Assessoria Esportiva & Eventos** ("Empresa", "Mec Assessoria", "Organização") e todos os seus **Usuários** (Atletas, Alunos da Assessoria Esportiva, Cronometristas e Clientes Corporativos).
 
-A utilização da plataforma digital, a realização de inscrições em eventos esportivos, a contratação dos serviços de assessoria e o cadastro para prestação de serviços de arbitragem implicam a **aceitação irrestrita, plena e automática** de todas as cláusulas e condições deste documento.
+A utilização da plataforma digital, a realização de inscrições em eventos esportivos e a contratação dos serviços de assessoria implicam a **aceitação irrestrita, plena e automática** de todas as cláusulas e condições deste documento.
 
 Os serviços prestados pela Mec Assessoria englobam:
 1. **Organização de Eventos Esportivos e Corridas de Rua**;
 2. **Assessoria Esportiva Integrada** (orientação e prescrição de planilhas de treinamento);
-3. **Serviços Profissionais de Arbitragem e Cronometragem Esportiva**.
+3. **Cronometragem Eletrônica RFID e Gestão Oficial de Resultados**.
 
 ---
 
@@ -37,7 +37,7 @@ O Atleta **isenta expressamente a Mec Assessoria Esportiva, seus diretores, sóc
 ## 3. Cessão Irrevogável de Direito de Imagem
 
 ### 3.1. Autorização Gratuita e Irrevogável
-Ao participar de eventos ou treinos organizados pela Mec Assessoria, o Usuário/Atleta/Árbitro **autoriza a título gratuito, universal, irrevogável e por prazo indeterminado**, o uso do seu nome, voz, biografia e imagem capturados por meio de fotografias, vídeos e gravações no ambiente do evento.
+Ao participar de eventos ou treinos organizados pela Mec Assessoria, o Usuário/Atleta **autoriza a título gratuito, universal, irrevogável e por prazo indeterminado**, o uso do seu nome, voz, biografia e imagem capturados por meio de fotografias, vídeos e gravações no ambiente do evento.
 
 ### 3.2. Finalidade Comercial e Publicitária
 A Organização poderá utilizar as imagens capturadas para exibição em redes sociais (Instagram, sites e canais da empresa), materiais publicitários, portfólios comerciais, vídeos institucionais, coberturas de imprensa e divulgação de futuras edições de eventos esportivos, no Brasil ou no exterior, **sem que assista ao participante qualquer direito a remuneração, indenização ou royalties**.
@@ -60,13 +60,13 @@ Caso um evento esportivo precise ser adiado, alterado ou suspenso por razões de
 
 ---
 
-## 5. Condições para Árbitros, Cronometristas e Prestadores de Serviços
+## 5. Cronometragem Eletrônica e Resultados Oficiais
 
-### 5.1. Inexistência de Vínculo Empregatício (Sem Vínculo CLT)
-O cadastro de árbitros e cronometristas no banco de dados da Mec Assessoria e a eventual convocação para atuação em provas tem caráter de **prestação de serviços autônomos e eventuais**, regulados pelo Código Civil Brasileiro (Art. 593 e seguintes).
+### 5.1. Apuração por Chips Eletrônicos
+A apuração dos tempos nas provas é realizada por sistema de cronometragem eletrônica RFID (chip descartável fixado no número de peito ou tênis). A correta utilização do chip conforme as instruções do evento é de responsabilidade exclusiva do atleta.
 
-### 5.2. Autonomia Profissional
-Fica expressamente declarado que a prestação de serviços de arbitragem **não gera qualquer tipo de vínculo empregatício, subordinativo, trabalhista (CLT) ou previdenciário** entre o prestador e a Mec Assessoria Esportiva. O árbitro atua de forma autônoma, recebendo diária fechada referente ao serviço pontual contratado.
+### 5.2. Classificação Oficial
+A homologação dos tempos brutos e líquidos e a validação de eventuais premiações ou pódios competem à Diretoria Técnica da Organização do evento.
 
 ---
 

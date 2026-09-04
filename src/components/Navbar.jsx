@@ -20,7 +20,7 @@ export default function Navbar({ onOpenEventModal }) {
   const navLinks = [
     { name: 'Eventos', href: '#eventos', icon: Calendar },
     { name: 'Assessoria', href: '#assessoria', icon: Dumbbell },
-    { name: 'Arbitragem', href: '#arbitragem', icon: ShieldCheck },
+    { name: 'Serviços', href: '#servicos', icon: ShieldCheck },
     { name: 'Resultados', href: '#resultados', icon: Search },
     { name: 'Calculadora', href: '#calculadora', icon: Calculator },
     { name: 'Contato', href: '#contato', icon: PhoneCall },

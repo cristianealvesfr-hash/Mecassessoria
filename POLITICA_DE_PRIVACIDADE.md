@@ -6,15 +6,15 @@
 ---
 
 ## 1. Apresentação e Compromisso com a Privacidade
-A **Mec Assessoria Esportiva** ("nós", "nosso" ou "empresa") preza pela transparência, segurança e privacidade de todos os seus usuários, atletas, parceiros, árbitros e clientes corporativos.
+A **Mec Assessoria Esportiva** ("nós", "nosso" ou "empresa") preza pela transparência, segurança e privacidade de todos os seus usuários, atletas, parceiros e clientes corporativos.
 
-Esta **Política de Privacidade** foi elaborada em estrita conformidade com a **Lei Geral de Proteção de Dados Pessoais (Lei Federal nº 13.709/2018 – LGPD)**, com o Marco Civil da Internet (Lei nº 12.965/2014) e demais normativas aplicáveis. Aqui, explicamos de forma clara e acessível como coletamos, usamos, armazenamos, compartilhamos e protegemos os seus dados no âmbito das nossas três principais frentes de atuação:
+Esta **Política de Privacidade** foi elaborada em estrita conformidade com a **Lei Geral de Proteção de Dados Pessoais (Lei Federal nº 13.709/2018 – LGPD)**, com o Marco Civil da Internet (Lei nº 12.965/2014) e demais normativas aplicáveis. Aqui, explicamos de forma clara e acessível como coletamos, usamos, armazenamos, compartilhamos e protegemos os seus dados no âmbito das nossas principais frentes de atuação:
 
 1. **Organização de Eventos Esportivos e Corridas de Rua**;
 2. **Assessoria Esportiva Integrada** (treinamento e acompanhamento de corredores);
-3. **Serviços Profissionais de Arbitragem e Cronometragem Esportiva**.
+3. **Cronometragem Eletrônica RFID e Gestão de Resultados Oficiais**.
 
-Ao utilizar nossa plataforma, se inscrever em nossas provas, contratar nossa assessoria ou prestar serviços de arbitragem, você declara estar ciente dos termos desta Política.
+Ao utilizar nossa plataforma, se inscrever em nossas provas ou contratar nossa assessoria esportiva, você declara estar ciente dos termos desta Política.
 
 ---
 
@@ -31,10 +31,6 @@ A coleta de dados varia de acordo com o relacionamento que você estabelece com 
 *   **Dados Cadastrais e de Contato:** Nome, CPF, e-mail, telefone/WhatsApp e endereço.
 *   **Dados de Saúde e Condicionamento Físico (Dados Sensíveis):** Histórico de lesões, anamnese esportiva, atestados médicos de aptidão física para prática de corrida de alta intensidade, questionários de prontidão para atividade física (PAR-Q), metas esportivas e frequência cardíaca.
 
-### C. Árbitros, Cronometristas e Prestadores de Serviços:
-*   **Dados Cadastrais e Fiscais:** Nome completo, CPF, RG, dados bancários (Chave PIX ou conta para pagamento de diárias), comprovante de residência.
-*   **Dados Profissionais:** Experiência técnica em arbitragem, histórico de atuações em provas e registros de escalas.
-
 ---
 
 ## 3. Como Usamos os Dados (Finalidades do Tratamento)
@@ -42,10 +38,9 @@ Tratamos seus dados pessoais apenas para propósitos legítimos, específicos e 
 
 1. **Gestão de Inscrições e Operação de Provas:** Identificar o participante, emitir o número de peito, preparar e entregar o kit do atleta com o tamanho correto, apurar os tempos de prova e publicar os resultados oficiais.
 2. **Elaboração de Planilhas e Treinos Personalizados:** Analisar o perfil do aluno da assessoria para prescrever treinos adequados, prevenir lesões e monitorar a evolução do pace e do volume semanal de corrida.
-3. **Escalação e Remuneração de Árbitros:** Organizar a equipe técnica dos eventos esportivos e processar o pagamento de diárias e honorários.
-4. **Comunicação Direta via WhatsApp e E-mail:** Enviar confirmações de inscrição, informativos sobre locais e horários de retirada de kits, parciais de tempos e resultados oficiais, bem como atender a solicitações de suporte.
-5. **Marketing e Novos Desafios:** Divulgar novos eventos esportivos, aberturas de lotes de inscrição e conteúdos de treinamento (sendo garantido o direito de cancelamento do recebimento a qualquer momento).
-6. **Cumprimento de Obrigações Legais e Regulatórias:** Guarda de registros de acesso (Marco Civil da Internet), emissão de documentos fiscais e comprovação perante órgãos de fiscalização pública.
+3. **Comunicação Direta via WhatsApp e E-mail:** Enviar confirmações de inscrição, informativos sobre locais e horários de retirada de kits, parciais de tempos e resultados oficiais, bem como atender a solicitações de suporte.
+4. **Marketing e Novos Desafios:** Divulgar novos eventos esportivos, aberturas de lotes de inscrição e conteúdos de treinamento (sendo garantido o direito de cancelamento do recebimento a qualquer momento).
+5. **Cumprimento de Obrigações Legais e Regulatórias:** Guarda de registros de acesso (Marco Civil da Internet), emissão de documentos fiscais e comprovação perante órgãos de fiscalização pública.
 
 ---
 
@@ -64,7 +59,7 @@ A Mec Assessoria Esportiva **não vende nem aluga dados pessoais** a terceiros. 
 
 *   **Comunicação Direta via WhatsApp:** Conforme indicado em nosso site, utilizamos o WhatsApp como canal ágil de atendimento, envio de mensagens pré-formatadas para inscrições, dúvidas de treinamento, orçamentos de eventos e envio de links de resultados de provas. As mensagens trafegam com criptografia de ponta a ponta da própria plataforma WhatsApp (Meta).
 *   **Provedores de Tecnologia e Cronometragem:** Compartilhamento dos dados estritamente necessários (número de peito, nome, distância e categoria) com softwares de cronometragem eletrônica para registro oficial de tempos.
-*   **Processadores de Pagamento e Bancos:** Para liquidação financeira de inscrições e pagamentos a árbitros.
+*   **Processadores de Pagamento e Bancos:** Para liquidação financeira e estornos de inscrições.
 *   **Autoridades Públicas:** Quando requisitado por ordem judicial ou para cumprimento de dever legal.
 
 ---

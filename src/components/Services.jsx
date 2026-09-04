@@ -27,10 +27,10 @@ export default function Services({ onSelectService }) {
           {SERVICES_LIST.map((service, index) => {
             const Icon = serviceIcons[index % serviceIcons.length];
             const isAssessoria = service.id === "assessoria-integrada";
-            const isArbitragem = service.id === "arbitragem-profissional";
+            const isCronometragem = service.id === "cronometragem-eletronica";
             const isEventos = service.id === "organizacao-eventos";
 
-            const anchorId = isAssessoria ? "assessoria" : (isArbitragem ? "arbitragem" : "organizacao");
+            const anchorId = isAssessoria ? "assessoria" : (isCronometragem ? "cronometragem" : "organizacao");
 
             return (
               <div
@@ -97,7 +97,7 @@ export default function Services({ onSelectService }) {
               É organizador de corridas ou gestor público?
             </h4>
             <p className="text-sm text-mec-muted">
-              Monte sua prova com quem é especialista em percursos certificados, cronometragem eletrônica e arbitragem oficial.
+              Monte sua prova com quem é especialista em percursos certificados, infraestrutura de arena e cronometragem eletrônica RFID.
             </p>
           </div>
           <a
