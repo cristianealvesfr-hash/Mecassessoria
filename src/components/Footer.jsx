@@ -57,8 +57,19 @@ export default function Footer({ onOpenPrivacyModal, onOpenTermsModal }) {
                 </a>
               </li>
               <li>
-                <a href="#eventos" className="text-mec-muted hover:text-mec-blue transition-colors">
-                  Calendário de Provas
+                <a href="#proximos-eventos" className="text-mec-muted hover:text-mec-blue transition-colors">
+                  Próximos Eventos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://biolink.website/mec_assessoria_minhasinscricoes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-mec-blue font-semibold hover:underline transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Inscrições Online (Biolink)</span>
+                  <ArrowUpRight className="w-3 h-3" />
                 </a>
               </li>
               <li>

@@ -18,7 +18,7 @@ export default function Navbar({ onOpenEventModal }) {
   }, []);
 
   const navLinks = [
-    { name: 'Eventos', href: '#eventos', icon: Calendar },
+    { name: 'Próximos Eventos', href: '#proximos-eventos', icon: Calendar },
     { name: 'Realizados', href: '#realizados', icon: Award },
     { name: 'Assessoria', href: '#assessoria', icon: Dumbbell },
     { name: 'Serviços', href: '#servicos', icon: ShieldCheck },
@@ -67,7 +67,9 @@ export default function Navbar({ onOpenEventModal }) {
           {/* Desktop CTA Button */}
           <div className="hidden sm:flex items-center gap-3 flex-shrink-0">
             <a
-              href="#eventos"
+              href="https://biolink.website/mec_assessoria_minhasinscricoes"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-mec-blue hover:bg-mec-blue-light rounded-xl transition-all duration-200 shadow-sm hover:shadow-blue-glow hover:scale-105 active:scale-95 whitespace-nowrap"
             >
               <span>Inscrever-se</span>
@@ -78,7 +80,9 @@ export default function Navbar({ onOpenEventModal }) {
           {/* Mobile Actions: CTA + Hamburger */}
           <div className="flex items-center gap-2 lg:hidden flex-shrink-0">
             <a
-              href="#eventos"
+              href="https://biolink.website/mec_assessoria_minhasinscricoes"
+              target="_blank"
+              rel="noopener noreferrer"
               className="whitespace-nowrap px-3.5 py-1.5 text-xs font-bold text-white bg-mec-blue hover:bg-mec-blue-light rounded-xl shadow-sm transition-all active:scale-95 flex items-center justify-center sm:hidden"
             >
               Inscrever-se
@@ -114,11 +118,13 @@ export default function Navbar({ onOpenEventModal }) {
             })}
             <div className="pt-4 mt-2 border-t border-gray-100">
               <a
-                href="#eventos"
+                href="https://biolink.website/mec_assessoria_minhasinscricoes"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-3 px-4 text-center font-bold text-white bg-mec-blue hover:bg-mec-blue-light rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
               >
-                <span>Ver Calendário de Provas</span>
+                <span>Inscrever-se no Biolink Oficial</span>
                 <ChevronRight className="w-4 h-4" />
               </a>
             </div>

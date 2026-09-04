@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import StatsBanner from './components/StatsBanner';
 import Services from './components/Services';
-import EventsCarousel from './components/EventsCarousel';
+import UpcomingEvents from './components/UpcomingEvents';
 import PastEvents from './components/PastEvents';
 import ResultsPanel from './components/ResultsPanel';
 import PaceCalculator from './components/PaceCalculator';
@@ -60,10 +60,8 @@ export default function App() {
         {/* 3. Our Services (3-Cards Grid) */}
         <Services />
 
-        {/* 4. Events Calendar (Ticket Sports Inspired Carousel) */}
-        <EventsCarousel 
-          onSelectEvent={handleOpenRegistration}
-        />
+        {/* 4. Upcoming Events Calendar & Biolink Hub */}
+        <UpcomingEvents />
 
         {/* 4.1 Past Events Showcase */}
         <PastEvents />

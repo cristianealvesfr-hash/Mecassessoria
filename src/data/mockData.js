@@ -1,3 +1,5 @@
+export const BIOLINK_INSCRICOES_URL = "https://biolink.website/mec_assessoria_minhasinscricoes";
+
 export const UPCOMING_EVENTS = [
   {
     id: "mec-sunset-2026",

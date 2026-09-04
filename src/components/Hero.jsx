@@ -49,11 +49,11 @@ export default function Hero({ onOpenEventModal }) {
             {/* CTA Buttons */}
             <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
               <a
-                href="#eventos"
+                href="#proximos-eventos"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-mec-blue hover:bg-mec-blue-light rounded-xl shadow-md hover:shadow-blue-glow hover:scale-105 active:scale-95 transition-all duration-300 group"
               >
                 <Calendar className="w-5 h-5 group-hover:rotate-6 transition-transform" />
-                <span>Nossos Eventos</span>
+                <span>Próximos Eventos</span>
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
 
