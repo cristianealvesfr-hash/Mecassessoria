@@ -3,7 +3,7 @@ export const BIOLINK_INSCRICOES_URL = "https://biolink.website/mec_assessoria_mi
 export const UPCOMING_EVENTS = [
   {
     id: "3-corrida-contra-polio-2026",
-    title: "3ª Corrida Contra a Pólio 2026",
+    title: "3ª Corrida Contra a Pólio",
     category: "Corrida de Rua",
     distances: ["Caminhada", "5K", "10K"],
     date: "13 de Setembro, 2026",
@@ -14,13 +14,13 @@ export const UPCOMING_EVENTS = [
     location: "Parque Max Feffer",
     image: "/corrida-contrapolio.png",
     badge: "Inscrições Abertas",
-    price: "Consulte Lotes",
-    spotsLeft: 70,
+    price: "R$ 100,00",
+    spotsLeft: 48,
     totalSpots: 1000,
     status: "Inscrições Abertas",
-    organizer: "Rotary Club Satélite Suzano Baruel & Mec Assessoria",
-    elevation: "+15m",
-    kit: "Camiseta Oficial + Sacochila + Medalha Finisher + Chip Eletrônico + Troféus",
+    organizer: "Rotary Club Suzano & Mec Assessoria",
+    elevation: "+20m",
+    kit: "Camiseta Oficial Temática + Sacochila + Medalha Finisher + Chip de Cronometragem + Troféus",
     registrationUrl: "https://minhasinscricoes.com.br/Evento/3CORRIDACONTRAPOLIO#inscricoes"
   },
   {
@@ -388,29 +388,6 @@ export const PARTNERS_DATA = [
 ];
 
 export const PAST_EVENTS = [
-  {
-    id: "corrida-contra-polio-anterior",
-    title: "2ª Corrida Contra a Pólio - Suzano",
-    category: "Corrida de Rua",
-    date: "14 de Setembro, 2025",
-    dateISO: "2025-09-14",
-    city: "Suzano",
-    state: "SP",
-    location: "Parque Max Feffer",
-    distances: ["Caminhada", "5K", "10K"],
-    participants: "1.650",
-    image: "/corrida-contrapolio.png",
-    galleryUrl: "https://www.instagram.com/mec_assessoria/",
-    photosCount: "540 fotos",
-    fastestPace: "03:10 min/km",
-    description: "Edição de sucesso no Parque Max Feffer em Suzano com arrecadação e apoio à causa End Polio Now do Rotary Club com assessoria e cronometragem oficial Mec.",
-    highlights: ["100% de Chips Lidos", "Parque Max Feffer", "Ação Rotary Club"],
-    gallery: [
-      "/corrida-contrapolio.png",
-      "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80"
-    ]
-  },
   {
     id: "mec-desafio-fortaleza-2025",
     title: "1ª Corrida e Caminhada Solidária Mec 2025",

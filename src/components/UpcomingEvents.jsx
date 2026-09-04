@@ -320,7 +320,7 @@ export default function UpcomingEvents() {
                       rel="noopener noreferrer"
                       className="w-full py-3 px-4 rounded-xl bg-mec-blue hover:bg-mec-blue-light text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-blue-glow transition-all flex items-center justify-center gap-2 group/cta hover:scale-[1.02] active:scale-95 text-center"
                     >
-                      <span>{event.registrationUrl ? 'Inscreva-se na Prova' : 'Inscreva-se no Biolink'}</span>
+                      <span>{event.registrationUrl ? 'Inscreva-se Agora' : 'Inscreva-se no Biolink'}</span>
                       <ArrowUpRight className="w-4 h-4 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5 transition-transform" />
                     </a>
                   </div>
@@ -416,7 +416,7 @@ export default function UpcomingEvents() {
                   rel="noopener noreferrer"
                   className="w-full py-3.5 px-6 rounded-xl bg-mec-blue hover:bg-mec-blue-light text-white text-sm font-extrabold shadow-lg hover:shadow-blue-glow transition-all flex items-center justify-center gap-2 text-center"
                 >
-                  <span>{selectedEventModal.registrationUrl ? 'Garantir Vaga na Prova' : 'Garantir Vaga no Biolink Oficial'}</span>
+                  <span>{selectedEventModal.registrationUrl ? 'Prosseguir para Inscrição Oficial' : 'Garantir Vaga no Biolink Oficial'}</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
 
