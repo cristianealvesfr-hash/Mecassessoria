@@ -2,8 +2,8 @@ export const BIOLINK_INSCRICOES_URL = "https://biolink.website/mec_assessoria_mi
 
 export const UPCOMING_EVENTS = [
   {
-    id: "3-corrida-contra-polio-2026",
-    title: "3ª Corrida Contra a Pólio",
+    id: "corrida-contra-polio-rotary-baruel-2026",
+    title: "Corrida Contra Polio Rotary Baruel",
     category: "Corrida de Rua",
     distances: ["Caminhada", "5K", "10K"],
     date: "13 de Setembro, 2026",
@@ -18,7 +18,7 @@ export const UPCOMING_EVENTS = [
     spotsLeft: 48,
     totalSpots: 1000,
     status: "Inscrições Abertas",
-    organizer: "Rotary Club Suzano & Mec Assessoria",
+    organizer: "Rotary Club Suzano Baruel & Mec Assessoria",
     elevation: "+20m",
     kit: "Camiseta Oficial Temática + Sacochila + Medalha Finisher + Chip de Cronometragem + Troféus",
     registrationUrl: "https://minhasinscricoes.com.br/Evento/3CORRIDACONTRAPOLIO#inscricoes"
