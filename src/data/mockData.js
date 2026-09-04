@@ -90,6 +90,28 @@ export const UPCOMING_EVENTS = [
     registrationUrl: "https://minhasinscricoes.com.br/Evento/CORRIDADE10ANOSDASMARIAS"
   },
   {
+    id: "pernas-solidarias-suzano-2026",
+    title: "Corrida 3 Anos do Pernas Solidárias Suzano",
+    category: "Corrida de Rua",
+    distances: ["Caminhada", "5K", "10K", "PCD"],
+    date: "29 de Novembro, 2026",
+    dateISO: "2026-11-29",
+    time: "07:00",
+    city: "Suzano",
+    state: "SP",
+    location: "Parque Max Feffer",
+    image: "/pernas-solidarias-suzano.png",
+    badge: "Inclusão Social • PCD",
+    price: "R$ 89,90",
+    spotsLeft: 50,
+    totalSpots: 1000,
+    status: "Inscrições Abertas",
+    organizer: "Pernas Solidárias Suzano & Mec Assessoria",
+    elevation: "+20m",
+    kit: "Camiseta Oficial Temática Roxa + Sacochila + Medalha Finisher Personalizada + Chip Eletrônico + Troféus",
+    registrationUrl: "https://minhasinscricoes.com.br/Evento/3ANIVERSARIODOPERNASSOLIDARIASSUZANO"
+  },
+  {
     id: "mec-sunset-2026",
     title: "MEC Sunset Run 2026 - Etapa Fortaleza",
     category: "Corrida de Rua",
