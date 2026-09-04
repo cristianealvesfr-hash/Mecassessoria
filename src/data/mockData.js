@@ -46,6 +46,28 @@ export const UPCOMING_EVENTS = [
     registrationUrl: "https://minhasinscricoes.com.br/evento/CorinthiansRun"
   },
   {
+    id: "vozes-que-nao-se-calam-2026",
+    title: "Corrida Vozes Que Não Se Calam",
+    category: "Corrida de Rua",
+    distances: ["Caminhada", "5K", "10K"],
+    date: "08 de Novembro, 2026",
+    dateISO: "2026-11-08",
+    time: "07:00",
+    city: "São Paulo",
+    state: "SP",
+    location: "Parque Ecológico do Tietê",
+    image: "/corrida-vozes-que-nao-se-calam.png",
+    badge: "Causa Social • Denuncie 180",
+    price: "R$ 89,90",
+    spotsLeft: 60,
+    totalSpots: 1500,
+    status: "Inscrições Abertas",
+    organizer: "Corrida Vozes Que Não Se Calam & Mec Assessoria",
+    elevation: "+15m",
+    kit: "Camiseta Oficial (Feminina / Masculina) + Sacochila + Meia Esportiva + Medalha Finisher + Chip",
+    registrationUrl: "https://minhasinscricoes.com.br/Evento/Vozesquenaosecalam-PqdoTiete"
+  },
+  {
     id: "mec-sunset-2026",
     title: "MEC Sunset Run 2026 - Etapa Fortaleza",
     category: "Corrida de Rua",
